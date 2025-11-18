@@ -1,0 +1,568 @@
+
+:root {
+  --color-primary: #A4CCD9;
+  --color-secondary: #C4E1E6;
+  --color-dark: #333;
+  --color-light: #f8f9fa;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: white;
+  color: var(--color-dark);
+  padding-top: 0;
+}
+
+/* Encabezado */
+.header {
+  background-color: var(--color-primary) !important;
+}
+
+.logo {
+  width: 80px;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Navegación */
+.navbar {
+  background-color: var(--color-secondary) !important;
+}
+
+.navbar-nav .nav-link {
+  color: var(--color-dark) !important;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+.navbar-nav .nav-link:hover {
+  background-color: var(--color-primary);
+  border-radius: 4px;
+}
+
+/* Botón del carrito */
+.carrito-btn {
+  position: relative;
+}
+
+/* Tarjetas de productos */
+.tarjeta {
+  transition: transform 0.3s, box-shadow 0.3s;
+  border: none;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  height: 100%; /* Asegura que todas las tarjetas tengan la misma altura */
+  display: flex;
+  flex-direction: column;
+}
+
+.tarjeta:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.tarjeta-img-container {
+  height: 250px; /* Altura fija para el contenedor de la imagen */
+  overflow: hidden; /* Oculta cualquier parte de la imagen que se salga */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f8f9fa; /* Fondo por si hay espacios vacíos */
+}
+
+.tarjeta img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ajusta la imagen cubriendo el contenedor */
+  transition: transform 0.5s ease;
+}
+
+.tarjeta:hover img {
+  transform: scale(1.05); /* Efecto de zoom suave al pasar el mouse */
+}
+
+.tarjeta .card-body {
+  flex-grow: 1; /* Hace que el cuerpo de la tarjeta ocupe el espacio restante */
+  display: flex;
+  flex-direction: column;
+}
+
+.tarjeta .card-text {
+  flex-grow: 1; /* Empuja el precio y el botón hacia abajo */
+}
+
+.price {
+  font-weight: bold;
+  color: #28a745;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.btn.agregar {
+  background-color: var(--color-secondary);
+  color: var(--color-dark);
+  border: none;
+  width: 100%; /* Botón de ancho completo */
+  margin-top: auto; /* Empuja el botón hacia la parte inferior */
+}
+
+.btn.agregar:hover {
+  background-color: var(--color-primary);
+}
+
+.btn.agregar:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Video promocional */
+.video-promocional {
+  background-color: var(--color-light);
+}
+
+/* Modal del carrito */
+.modal-content {
+  border-radius: 12px;
+}
+
+#listaCarrito .list-group-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#listaCarrito .cantidad-control {
+  display: flex;
+  align-items: center;
+}
+
+#listaCarrito .cantidad-control button {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+/* Footer */
+.footer {
+  background-color: var(--color-dark) !important;
+}
+
+/* Badges */
+.badge {
+  font-size: 0.7rem;
+}
+
+/* Login page */
+.login-container {
+  max-width: 400px;
+  margin: 100px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Admin styles */
+.pedido-card {
+  border-left: 4px solid #0d6efd;
+}
+
+.pedido-card.pendiente {
+  border-left-color: #fd7e14;
+}
+
+.pedido-card.enviado {
+  border-left-color: #198754;
+}
+
+.pedido-card.entregado {
+  border-left-color: #6c757d;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .logo {
+    width: 60px;
+  }
+  
+  .header h1 {
+    font-size: 1.5rem;
+
+  }
+  
+  .navbar-nav .nav-item {
+    margin: 2px 0;
+  }
+  
+  .tarjeta img {
+    height: 180px;
+  }
+}
+
+@media (max-width: 576px) {
+  .header {
+    padding: 10px 0;
+  }
+  
+  .header h1 {
+    font-size: 1.3rem;
+  }
+  
+  .carrito-btn {
+    font-size: 0.9rem;
+    padding: 5px 10px;
+  }
+  
+  .tarjeta img {
+    height: 160px;
+  }
+  
+  .price {
+    font-size: 1.1rem;
+  }
+  
+  .login-container {
+    margin: 50px 15px;
+  }
+}
+
+/* Barra de búsqueda */
+.search-bar {
+  position: relative;
+}
+
+#searchResults {
+  border: 1px solid #ddd;
+}
+
+.producto-busqueda {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #f0f0f0;
+  text-decoration: none;
+  color: #333;
+  transition: background-color 0.2s;
+}
+
+.producto-busqueda:hover {
+  background-color: #f8f9fa;
+  text-decoration: none;
+  color: #333;
+}
+
+.producto-busqueda img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+.producto-busqueda .producto-info {
+  flex-grow: 1;
+}
+
+.producto-busqueda .producto-nombre {
+  font-weight: bold;
+  margin-bottom: 2px;
+}
+
+.producto-busqueda .producto-precio {
+  color: #28a745;
+  font-size: 0.9em;
+}
+
+/* Ocultar resultados cuando no hay búsqueda */
+.d-none {
+  display: none !important;
+}
+
+/* Agrega al final de tu Style.txt */
+
+/* Estilos para categorías */
+.categoria-section {
+  border-bottom: 2px solid var(--color-secondary);
+  padding-bottom: 2rem;
+}
+
+.categoria-section:last-child {
+  border-bottom: none;
+}
+
+.categoria-titulo {
+  color: var(--color-dark);
+  font-weight: 600;
+  margin-bottom: 0;
+}
+
+.btn-categoria {
+  transition: all 0.3s ease;
+  margin: 0.25rem;
+}
+
+.btn-categoria.active {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: white;
+}
+
+.btn-categoria:hover {
+  transform: translateY(-2px);
+}
+
+#filtroActivo {
+  background-color: #e3f2fd;
+  border-left: 4px solid var(--color-primary);
+}
+
+/* Estilos para el dropdown de categorías */
+.btn-categoria-dropdown.active {
+  font-weight: bold;
+}
+
+.dropdown-menu-dark .dropdown-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Asegurar que el dropdown tenga buen z-index */
+.navbar .dropdown-menu {
+  z-index: 1021;
+}
+/* Mejoras para la navbar */
+.navbar .container {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-nav .nav-link {
+  padding: 0.5rem 1rem;
+}
+
+.search-bar .input-group {
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Mejoras para resultados de búsqueda */
+#searchResults {
+  border: 1px solid #dee2e6;
+  border-top: none;
+}
+
+.producto-busqueda {
+  display: flex;
+  align-items: center;
+  padding: 12px 15px;
+  border-bottom: 1px solid #f8f9fa;
+  text-decoration: none;
+  color: #333;
+  transition: all 0.2s ease;
+}
+
+.producto-busqueda:hover {
+  background-color: #f8f9fa;
+  text-decoration: none;
+  color: #333;
+}
+
+.producto-busqueda:last-child {
+  border-bottom: none;
+}
+
+.producto-busqueda img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-right: 15px;
+  border: 1px solid #dee2e6;
+}
+
+.producto-busqueda .producto-info {
+  flex-grow: 1;
+}
+
+.producto-busqueda .producto-nombre {
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: #333;
+}
+
+.producto-busqueda .producto-precio {
+  color: #28a745;
+  font-weight: 600;
+  font-size: 1em;
+}
+
+/* Responsividad mejorada */
+@media (max-width: 992px) {
+  .navbar .search-bar {
+    margin: 10px 0;
+    max-width: 100% !important;
+  }
+  
+  .navbar .d-flex {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 576px) {
+  .carrito-btn, .btn-outline-light {
+    font-size: 0.8rem;
+    padding: 6px 8px;
+  }
+  
+  .carrito-btn span, .btn-outline-light span {
+    display: none;
+  }
+}
+
+/* Estilos para scroll suave y destacado */
+.card {
+  transition: all 0.3s ease;
+}
+
+.producto-destacado {
+  animation: highlightPulse 2s ease-in-out;
+}
+
+@keyframes highlightPulse {
+  0% { 
+    box-shadow: 0 0 0 0 rgba(255, 193, 7, 0.7);
+    transform: translateY(0);
+  }
+  50% { 
+    box-shadow: 0 0 0 10px rgba(255, 193, 7, 0.3);
+    transform: translateY(-5px);
+  }
+  100% { 
+    box-shadow: 0 0 0 0 rgba(255, 193, 7, 0);
+    transform: translateY(0);
+  }
+}
+
+/* Mejorar la visibilidad durante el scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Agregar al style.css */
+.toast-container {
+    z-index: 9999;
+}
+
+.toast {
+    backdrop-filter: blur(10px);
+}
+
+.pedido-card {
+    transition: all 0.3s ease;
+}
+
+.pedido-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.table-responsive {
+    border-radius: 8px;
+}
+/* Agregar al style.css para los filtros del admin */
+.filtro-categorias {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.filtro-categorias .form-select {
+    min-width: 200px;
+}
+
+#infoFiltroProductos {
+    font-size: 0.9rem;
+}
+
+/* Mejoras visuales para las tarjetas de productos */
+.tarjeta .card-footer {
+    background: transparent;
+    border-top: 1px solid rgba(0,0,0,0.125);
+}
+
+/* Responsive para filtros */
+@media (max-width: 768px) {
+    .filtro-categorias .d-flex {
+        flex-direction: column;
+        gap: 1rem !important;
+    }
+    
+    .filtro-categorias .form-select {
+        min-width: 100%;
+    }
+}
+/* Mejoras para toasts */
+.toast-container {
+    z-index: 9999;
+}
+
+.toast {
+    backdrop-filter: blur(10px);
+    border: none;
+    border-radius: 8px;
+}
+
+.toast-body {
+    display: flex;
+    align-items: center;
+}
+
+/* Animación para el spinner */
+.fa-spinner {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Estados del botón guardar */
+#guardarProducto:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+/* Estilos para cantidad personalizada */
+.cantidad-personalizada .input-group {
+  max-width: 150px;
+}
+
+.cantidad-personalizada .form-control {
+  text-align: center;
+}
+
+.precio-calculado {
+  font-size: 0.9rem;
+}
+
+/* Mejorar visualización en el carrito */
+.list-group-item .text-muted {
+  font-size: 0.8rem;
+}
+
+/* Responsive para inputs de cantidad */
+@media (max-width: 576px) {
+  .cantidad-personalizada .input-group {
+    max-width: 120px;
+  }
+}
